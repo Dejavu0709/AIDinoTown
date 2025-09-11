@@ -1,0 +1,24 @@
+Thank you for purchasing the pack!
+
+The pack use the universal render pipeline and post effects (already setup in the main camera)
+
+There is a demo scenes and prefabs folder for each assets. You can use this as a starting point for your own creations
+
+There are 2 rigged characters with 3 skins each and accessories (character controller are not included)
+There is also a bird model with 3 animations and skins.
+
+The terrain and buildings assets are modular and will snap with each other or on a grid (hold "V"or"ctrl") to do so)
+
+There are several props, plants, crops, etc.. to decorate your levels.
+
+As well as several custom effects and shaders (butterlies, smoke, clouds, water, terrain triplanar, foliage wiht wind,etc..)
+
+
+
+
+
+
+
+
+
+

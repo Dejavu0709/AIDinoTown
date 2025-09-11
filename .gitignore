@@ -1,0 +1,161 @@
+# Ignore project files
+project/nexgen-dragon/*.sln
+project/nexgen-dragon/*.csproj
+*.userprefs
+*.user
+obj/
+project/nexgen-dragon/Assets/StreamingAssets/*.dll
+project/nexgen-dragon/Assets/StreamingAssets/*.dll.meta
+project/nexgen-dragon/Assets/StreamingAssets/*.pdb
+project/nexgen-dragon/Assets/StreamingAssets/*.pdb.meta
+project/nexgen-dragon/Assets/ILRuntime/Runtime/Debugger/**
+!project/nexgen-dragon/Assets/StreamingAssets/hotfix.dll
+!project/nexgen-dragon/Assets/StreamingAssets/hotfix.pdb
+
+# Ignore vs code project files
+.vscode/
+VSCode.meta
+VSCode
+.vs/
+
+# Ignore Emacs temp files
+/#*#
+.#*
+
+# JetBrains folders
+.idea
+
+# Ignore Unity temp files
+/project/nexgen-dragon/[Ll]ibrary/
+/project/nexgen-dragon/[Tt]emp/
+/project/nexgen-dragon/[Oo]bj/
+/project/nexgen-dragon/[Bb]uild/
+/project/nexgen-dragon/[Bb]uilds/
+/project/nexgen-dragon/[Ll]ogs/
+
+/project/nexgen-dragon/[Pp]rojectSettings/ProjectVersion.txt
+
+# Ignore Mac OS files
+*.DS_Store
+
+# Ignore generator temp directory
+/project/tools/code_generator/db_codes/
+/project/tools/code_generator/__pycache__/
+#/project/tools/code_generator/configs/
+/project/tools/code_generator/generated_json/
+/project/tools/code_generator/db_codes_hotfix/
+project/nexgen-dragon/Assets/Plugins/Editor/JetBrains.meta
+project/nexgen-dragon/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs.meta
+
+# Ignore sdk files
+project/kg-android-sdk/build/
+project/kg-android-sdk/demo/build/
+project/kg-android-sdk/kingsgroup/sdk-core/build/
+project/kg-android-sdk/kingsgroup/wechathelper/build/
+
+project/kg-android-sdk/gradle/
+project/kg-android-sdk/.gradle/
+
+project/kg-android-sdk/local.properties
+project/kg-android-sdk/gradlew
+project/kg-android-sdk/gradlew.bat
+
+project/kg-android-sdk/release/
+project/kg-ios-sdk/release/
+
+*.apk
+*.iml
+
+# Ignore Bundle Graph Tool Temp files
+project/nexgen-dragon/Assets/Plugins/ThirdParty/AssetBundleGraphTool/UnityEngine.AssetBundleGraph/Cache/
+project/nexgen-dragon/Assets/Plugins/ThirdParty/AssetBundleGraphTool/UnityEngine.AssetBundleGraph/Cache.meta
+project/nexgen-dragon/Assets/Plugins/ThirdParty/AssetBundleGraphTool/UnityEngine.AssetBundleGraph/SettingFiles/
+project/nexgen-dragon/Assets/Plugins/ThirdParty/AssetBundleGraphTool/UnityEngine.AssetBundleGraph/SettingFiles.meta
+project/nexgen-dragon/Assets/__ArtData/Material.meta
+project/nexgen-dragon/Assets/__RawArtData.meta
+project/nexgen-dragon/Assets/__RawArtData/Texture.meta
+project/nexgen-dragon/Assets/__RawArtData/Texture/VFX.meta
+project/nexgen-dragon/Assets/__RawArtData/Texture/VFX/VFX.meta
+project/nexgen-dragon/Assets/__RawArtData/Texture/VFX/VFX.meta
+project/nexgen-dragon/Assets/Plugins/ThirdParty/AssetBundleGraphTool/UnityEngine.AssetBundleGraph/CustomCache
+project/nexgen-dragon/Assets/StreamingAssets/GameAssets/AssetBundle
+CustomCache.meta
+
+#Ignore UnityEngine and UnityEditor
+#UnityEngine.dll
+#UnityEngine.dll.meta
+#UnityEngine.dll.mdb
+#UnityEngine.dll.mdb.meta
+#UnityEditor.dll
+#UnityEditor.dll.meta
+#UnityEditor.dll.mdb
+#UnityEditor.dll.mdb.meta
+
+# Ignore MemoryProfiler files
+MemoryProfiler/
+MemoryProfiler.meta
+/project/nexgen-dragon/Assets/Plugins/Editor/JetBrains
+/project/tools/code_generator/code_generator1.sln
+/project/tools/code_generator/request_remote/
+/project/tools/code_generator/request_codes/
+/project/tools/code_generator/config_json_client/
+/project/tools/code_generator/config_json_remote/
+project/nexgen-dragon/Assets/temp_ww_dev/
+project/nexgen-dragon/Assets/temp_ww_release/
+project/nexgen-dragon/Assets/__Preview*
+/project/nexgen-dragon/.idea/
+*.vsconfig
+/project/nexgen-dragon/Assets/StreamingAssets/build_info
+/project/nexgen-dragon/Assets/StreamingAssets/build_info.meta
+/project/nexgen-dragon/Assets/StreamingAssets/build_info
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/011938gq212qlftvf11tzw 1.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/011938gq212qlftvf11tzw 1.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/011938gq212qlftvf11tzw.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/011938gq212qlftvf11tzw.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/1.FBX
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/1.FBX.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/142712zbhc70s36fhirnll 1.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/142712zbhc70s36fhirnll 1.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/142712zbhc70s36fhirnll.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/142712zbhc70s36fhirnll.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/1E856BBB-1931-4f00-B4F7-AAD377706A19.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/1E856BBB-1931-4f00-B4F7-AAD377706A19.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/9528148196138a5270c2b9742f19d3.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/9528148196138a5270c2b9742f19d3.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_2900401_noise_10.tga
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_2900401_noise_10.tga.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_1 1.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_1 1.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_1.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_1.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_12.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_12.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_37 1.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_37 1.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_37.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_37.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_common_31_clamp.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_mask_common_31_clamp.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_model_ring_43.FBX
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_model_ring_43.FBX.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_noise_75.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/eff_noise_75.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/Effect.prefab
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/Effect.prefab.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/GF_193_02.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/GF_193_02.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/Mask.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/Mask.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/sphere02.FBX
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/sphere02.FBX.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/Tex_Fangshe_50.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/Tex_Fangshe_50.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/背景图.prefab
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/背景图.prefab.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/草地.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/草地.png.meta
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/防护罩分层.png
+project/nexgen-dragon/Assets/__ArtData/StaticResources/Effect/Nzx/防护罩分层.png.meta
+/project/nexgen-dragon/Assets/Darrenzh
+/project/nexgen-dragon/Assets/Darrenzh.meta
