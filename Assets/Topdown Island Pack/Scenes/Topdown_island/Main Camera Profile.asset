@@ -13,10 +13,33 @@ MonoBehaviour:
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
+  neutralHDRRangeReductionMode:
+    m_OverrideState: 0
+    m_Value: 2
+  acesPreset:
+    m_OverrideState: 0
+    m_Value: 3
+  hueShiftAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  detectPaperWhite:
+    m_OverrideState: 0
+    m_Value: 0
+  paperWhite:
+    m_OverrideState: 0
+    m_Value: 300
+  detectBrightnessLimits:
+    m_OverrideState: 0
+    m_Value: 1
+  minNits:
+    m_OverrideState: 0
+    m_Value: 0.005
+  maxNits:
+    m_OverrideState: 0
+    m_Value: 1000
 --- !u!114 &-4633555311985004466
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -30,55 +53,39 @@ MonoBehaviour:
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
   gaussianStart:
     m_OverrideState: 1
     m_Value: 8
-    min: 0
   gaussianEnd:
     m_OverrideState: 1
     m_Value: 20
-    min: 0
   gaussianMaxRadius:
     m_OverrideState: 1
     m_Value: 1.5
-    min: 0.5
-    max: 1.5
   highQualitySampling:
     m_OverrideState: 0
     m_Value: 1
   focusDistance:
     m_OverrideState: 1
     m_Value: 6.5
-    min: 0.1
   aperture:
     m_OverrideState: 1
     m_Value: 1.5
-    min: 1
-    max: 32
   focalLength:
     m_OverrideState: 1
-    m_Value: 60
-    min: 1
-    max: 300
+    m_Value: 15
   bladeCount:
     m_OverrideState: 0
     m_Value: 5
-    min: 3
-    max: 9
   bladeCurvature:
     m_OverrideState: 0
     m_Value: 1
-    min: 0
-    max: 1
   bladeRotation:
     m_OverrideState: 0
     m_Value: 0
-    min: -180
-    max: 180
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,45 +117,40 @@ MonoBehaviour:
   m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
-  threshold:
-    m_OverrideState: 1
-    m_Value: 0.4
-    min: 0
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.25
-    min: 0
-  scatter:
-    m_OverrideState: 1
-    m_Value: 0.25
-    min: 0
-    max: 1
-  clamp:
-    m_OverrideState: 0
-    m_Value: 65469.8
-    min: 0
-  tint:
-    m_OverrideState: 1
-    m_Value: {r: 0.8679245, g: 0.8102593, b: 0.55268776, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
-  highQualityFiltering:
-    m_OverrideState: 0
-    m_Value: 0
   skipIterations:
     m_OverrideState: 0
     m_Value: 1
-    min: 0
-    max: 16
+  threshold:
+    m_OverrideState: 1
+    m_Value: 0.4
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.25
+  scatter:
+    m_OverrideState: 1
+    m_Value: 0.25
+  clamp:
+    m_OverrideState: 0
+    m_Value: 65469.8
+  tint:
+    m_OverrideState: 1
+    m_Value: {r: 0.8490566, g: 0.73481447, b: 0.19624422, a: 1}
+  highQualityFiltering:
+    m_OverrideState: 0
+    m_Value: 0
+  downscale:
+    m_OverrideState: 0
+    m_Value: 0
+  maxIterations:
+    m_OverrideState: 0
+    m_Value: 6
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 1
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
 --- !u!114 &6063478505635464903
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -162,26 +164,18 @@ MonoBehaviour:
   m_Name: Vignette
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   color:
     m_OverrideState: 1
     m_Value: {r: 0.11213956, g: 0.14524093, b: 0.23584908, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.247
-    min: 0
-    max: 1
+    m_Value: 0.463
   smoothness:
     m_OverrideState: 1
     m_Value: 0.112
-    min: 0.01
-    max: 1
   rounded:
     m_OverrideState: 1
     m_Value: 1
@@ -198,28 +192,18 @@ MonoBehaviour:
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 20
-    min: -100
-    max: 100
+    m_Value: 66.7
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.9433962, g: 0.9429389, b: 0.8579566, a: 1}
-    hdr: 1
-    showAlpha: 0
-    showEyeDropper: 1
+    m_Value: {r: 0.9150943, g: 0.91175884, b: 0.8417141, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: 0
-    min: -180
-    max: 180
   saturation:
     m_OverrideState: 1
     m_Value: -5
-    min: -100
-    max: 100

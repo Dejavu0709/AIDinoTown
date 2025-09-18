@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Topdown Island Pack/Scenes/Topdown_island.unity
     guid: d3fcebaa943dd1141880338ab8cf9ee3
+  - enabled: 0
+    path: Assets/Samples/A_ Pathfinding Project/5.3.8/Example scenes/Scenes/RecastDoors/RecastDoors.unity
+    guid: 12fa0ddd6762d354288ee6aac642f2ae
   m_configObjects: {}

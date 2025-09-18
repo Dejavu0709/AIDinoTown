@@ -78,6 +78,7 @@ public class AvatarMoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("isWaiting: " + isWaiting);
         // If we're waiting, don't do anything
         if (isWaiting)
         {
@@ -92,33 +93,55 @@ public class AvatarMoveManager : MonoBehaviour
         {
             // We've reached the destination, start waiting
             StartCoroutine(WaitAtDestination());
-            UpdateAnimationState(false);
             return;
         }
 
-        // Update animation state
-        UpdateAnimationState(true);
     }
 
     /// <summary>
     /// Selects a new random destination from the target points list
+    /// Ensures the new target is different from the current one
     /// </summary>
     private void SelectNewDestination()
     {
+        //Debug.Log("Selecting new destination");
         if (targetPoints.Count == 0) return;
 
-        // Select a random target point
-        int randomIndex = Random.Range(0, targetPoints.Count);
-        currentTarget = targetPoints[randomIndex];
+        // If we only have one target point, we have no choice
+        if (targetPoints.Count == 1)
+        {
+            currentTarget = targetPoints[0];
+            aiDestinationSetter.target = currentTarget;
+            isWaiting = false;
+            return;
+        }
+
+        // Select a random target point that is different from the current one
+        int randomIndex;
+        int attempts = 0;
+        Transform previousTarget = currentTarget; // Store current target to compare
+
+        do
+        {
+            randomIndex = Random.Range(0, targetPoints.Count);
+            currentTarget = targetPoints[randomIndex];
+            attempts++;
+
+            // Prevent infinite loop - if we've tried many times, just accept any target
+            if (attempts >= 10) break;
+
+        } while (currentTarget == previousTarget);
 
         // Set the destination for the AI
         if (aiDestinationSetter != null)
         {
             aiDestinationSetter.target = currentTarget;
         }
-
+        //Debug.Log("Selected new destination: " + currentTarget.name);
         // Reset the waiting flag
         isWaiting = false;
+                // Update animation state
+        UpdateAnimationState(true);
     }
 
     /// <summary>
@@ -133,11 +156,14 @@ public class AvatarMoveManager : MonoBehaviour
 
         // Set the animation parameter
         //animator.SetBool(ANIM_IS_WALKING, isMoving);
-        Debug.Log("IsMoving: " + isMoving);
+        //Debug.Log("IsMoving: " + isMoving);
         if (isMoving)
             animator.SetInteger("State", 12);
         else
+        {
+            animator.SetInteger("State", 0);
             animator.SetTrigger("Reset");
+        }
     }
 
     /// <summary>
@@ -146,17 +172,14 @@ public class AvatarMoveManager : MonoBehaviour
     private IEnumerator WaitAtDestination()
     {
         // Set waiting flag
-        isWaiting = false;
+        isWaiting = true;
 
         // Stop movement by setting a dummy target at current position
         dummyTarget.position = transform.position;
         aiDestinationSetter.target = dummyTarget;
 
         // Update animation to idle
-        if (animator != null)
-        {
-            animator.SetBool(ANIM_IS_WALKING, false);
-        }
+        UpdateAnimationState(false);
 
         // Wait for a random time
         float waitTime = Random.Range(minWaitTime, maxWaitTime);
