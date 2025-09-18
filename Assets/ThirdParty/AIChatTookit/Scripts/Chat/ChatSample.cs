@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using MEC;
-
+using RobotGame;
 public class ChatSample : MonoSingleton<ChatSample>
 {
     /// <summary>
@@ -36,9 +36,9 @@ public class ChatSample : MonoSingleton<ChatSample>
     [SerializeField] private Button m_CommitMsgBtn;
 
 
-    [SerializeField] private CommonButton m_CloseBtn;
+    //[SerializeField] private Button m_CloseBtn;
 
-    [SerializeField] private InterfaceAnimManager interfaceAnimManager;
+   // [SerializeField] private InterfaceAnimManager interfaceAnimManager;
 
 
     #endregion
@@ -61,7 +61,7 @@ public class ChatSample : MonoSingleton<ChatSample>
     private void Start()
     {
         m_CommitMsgBtn.onClick.AddListener(delegate { SendData(); });
-        m_CloseBtn.onClick.AddListener(delegate { CloseChat(); });
+        //m_CloseBtn.onClick.AddListener(delegate { CloseChat(); });
         RegistButtonEvent();
         InputSettingWhenWebgl();
         ChatHistory = PlayerSave.GetChatHistory();
@@ -85,6 +85,7 @@ public class ChatSample : MonoSingleton<ChatSample>
     /// </summary>
     public void SendData()
     {
+        Debug.Log("SendData" + m_InputWord.text);
         if (m_InputWord.text.Equals(""))
             return;
 
@@ -108,7 +109,7 @@ public class ChatSample : MonoSingleton<ChatSample>
         m_InputWord.text = "";
         m_TextBack.text = "...";
 
-        //?§Ý????????
+        //?ï¿½ï¿½????????
         SetAnimator("state", 1);
     }
     /// <summary>
@@ -140,7 +141,7 @@ public class ChatSample : MonoSingleton<ChatSample>
         m_InputWord.text = "";
         m_TextBack.text = "...";
 
-        //?§Ý????????
+        //?ï¿½ï¿½????????
         SetAnimator("state", 1);
     }
 
@@ -203,7 +204,7 @@ public class ChatSample : MonoSingleton<ChatSample>
 
         EventTrigger _trigger = m_VoiceInputBotton.gameObject.AddComponent<EventTrigger>();
 
-        //?????????¦Ì????
+        //?????????ï¿½ï¿½????
         EventTrigger.Entry _pointDown_entry = new EventTrigger.Entry();
         _pointDown_entry.eventID = EventTriggerType.PointerDown;
         _pointDown_entry.callback = new EventTrigger.TriggerEvent();
@@ -297,7 +298,7 @@ public class ChatSample : MonoSingleton<ChatSample>
         Debug.Log("????????" + _clip.length);
         //??????????????????
         StartTypeWords(_response);
-        //?§Ý??????????
+        //?ï¿½ï¿½??????????
         SetAnimator("state", 2);
     }
 
@@ -330,14 +331,14 @@ public class ChatSample : MonoSingleton<ChatSample>
         {
             yield return new WaitForSeconds(m_WordWaitTime);
             currentPos++;
-            //?¨¹???¦Ì???
+            //?ï¿½ï¿½???ï¿½ï¿½???
             m_TextBack.text = _msg.Substring(0, currentPos);
 
             m_WriteState = currentPos < _msg.Length;
 
         }
 
-        //¨«??¦Ì?¦Ì?y?¡¥?
+        //ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½?y?ï¿½ï¿½?
         SetAnimator("state", 0);
     }
     private IEnumerator SetTextPerWordOneByOne(string _msg)
@@ -369,7 +370,7 @@ public class ChatSample : MonoSingleton<ChatSample>
 
         }
         m_TextBack.transform.parent.gameObject.SetActive(false);
-        //?§Ý??????????
+        //?ï¿½ï¿½??????????
         SetAnimator("state", 0);
     }
     #endregion
@@ -422,7 +423,7 @@ public class ChatSample : MonoSingleton<ChatSample>
         m_TempChatBox.Clear();
     }
 
-    //??????????§Ò??
+    //??????????ï¿½ï¿½??
     private IEnumerator GetHistoryChatInfo()
     {
 
@@ -472,35 +473,22 @@ public class ChatSample : MonoSingleton<ChatSample>
         DoDisappear();
         Timing.CallDelayed(2.2f, () =>
         {
-            RobotManager.Instance.CloseChat();
+           // RobotManager.Instance.CloseChat();
         });
         //m_ChatPanel.SetActive(false);
     }
     public void DoAppear()
     {
-        interfaceAnimManager.gameObject.SetActive(true);
-        interfaceAnimManager.startAppear();
+        //interfaceAnimManager.gameObject.SetActive(true);
+        //interfaceAnimManager.startAppear();
         //playSound();
     }
     public void DoDisappear()
     {
-        if (interfaceAnimManager)
+        //if (interfaceAnimManager)
         {
-            interfaceAnimManager.startDisappear();
+        //    interfaceAnimManager.startDisappear();
         }
         //playSound();
     }
-    
-    private void CallInterface(InterfaceAnimManager _interface) {
-        if (interfaceAnimManager) {
-            interfaceAnimManager.startDisappear(true);
-        }
-        interfaceAnimManager = _interface;
-        if (_interface) {
-            interfaceAnimManager.gameObject.SetActive(true);
-            interfaceAnimManager.startAppear();
-            //UpdateDisplayedInfo();
-        }
-    }
-
 }

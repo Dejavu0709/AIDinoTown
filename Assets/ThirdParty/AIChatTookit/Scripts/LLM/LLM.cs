@@ -38,17 +38,7 @@ public class LLM:MonoBehaviour
     /// 发送消息
     /// </summary>
     public virtual void PostMsg(string _msg,Action<string> _callback) {
-        //上下文条数设置
-        CheckHistory();
-        //提示词处理
-        string message = "当前为角色的人物设定：" + m_Prompt +
-            " 回答的语言：" +  LanguageManager.LanguageManager.Instance.GetCurrentLanguage() +
-            " 接下来是我的提问：" + _msg;
 
-        //缓存发送的信息列表
-        m_DataList.Add(new SendData("user", message));
-
-        StartCoroutine(Request(message, _callback));
     }
 
     public virtual IEnumerator Request(string _postWord, System.Action<string> _callback)

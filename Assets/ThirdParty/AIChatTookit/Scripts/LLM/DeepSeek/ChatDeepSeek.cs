@@ -2,10 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using I2.Loc;
-using LitJson;
 using UnityEngine;
 using UnityEngine.Networking;
-
+using LitJson;
 public class ChatDeepSeek : LLM
 {
 
@@ -245,17 +244,17 @@ public class ChatDeepSeek : LLM
 
 		{
 			m_DataList.Insert(0, new SendData("system", string.Format(m_SystemSetting, m_Name, JsonMapper.ToJson(m_Characters), m_CurCharacter, JsonMapper.ToJson(m_SkillBook), JsonMapper.ToJson(m_SkillBookLearned), JsonMapper.ToJson(m_Motions), m_CurMotion)));
-			//上下文条数设�?
+			//上下文条数设�???
 			CheckHistory();
 		}
 
-		//提示词处�?
-		//string message = "当前回答的语言�?" + LanguageManager.LanguageManager.Instance.GetCurrentLanguage() +
-		//		" 接下来是我的提问�?" + _msg;
+		//提示词处�???
+		//string message = "当前回答的语言�???" + LanguageManager.LanguageManager.Instance.GetCurrentLanguage() +
+		//		" 接下来是我的提问�???" + _msg;
 		Debug.Log("Current language: " + LocalizationManager.CurrentLanguage);
 		string message = "当前回答的语言?" + LocalizationManager.CurrentLanguage +
 				" 接下来是我的提问?" + _msg;
-		//string message = " 接下来是我的提问�?" + _msg;
+		//string message = " 接下来是我的提问�???" + _msg;
 		//缓存发送的信息列表
 		m_DataList.Add(new SendData("user", message));
 		StartCoroutine(Request(_msg, _callback));
