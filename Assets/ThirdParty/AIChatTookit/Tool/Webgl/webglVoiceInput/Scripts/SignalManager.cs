@@ -29,17 +29,17 @@ public class SignalManager : MonoBehaviour
 
     #endregion
     #region UnityToJs
-    [DllImport("__Internal")]
-    private static extern void StartRecord();
-    [DllImport("__Internal")]
-    private static extern void StopRecord();
+    //[DllImport("__Internal")]
+    //private static extern void StartRecord();
+   // [DllImport("__Internal")]
+   // private static extern void StopRecord();
     void StartRecorderFunc()
     {
-        StartRecord();
+      //  StartRecord();
     }
     void EndRecorderFunc()
     {
-        StopRecord();
+        //StopRecord();
     }
     #endregion
 
