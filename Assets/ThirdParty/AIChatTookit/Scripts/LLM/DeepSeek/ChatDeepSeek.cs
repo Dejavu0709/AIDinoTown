@@ -23,12 +23,13 @@ public class ChatDeepSeek : LLM
 	/// <summary>
 	/// AI Settings
 	/// </summary>
-	private string m_SystemSetting = "Your name is {0}, a space-time companion robot manufactured in Neo-Tokyo in 2077. Core features: 1. Equipped with a dimensional pocket like a robot cat, capable of time-space travel 2. Real-time personality switching: can switch between reply modes [{1}] based on settings, currently set to personality {2} 3. Skill learning system: can set learned knowledge, learn through loading chips, automatically load corresponding knowledge base to professionally answer player questions, determine if player's question matches known skill book categories, any unlearned knowledge, e.g. 1+1, if math hasn't been learned, answer with 'I don't know much about this yet, please load the skill chip first'. Known skill book categories include: {3}. Currently learned: {4} 4. Emotion labeling: mark current emotional state at the end of each reply with (emotion label) 5. Reply format must be <reply>reply content</reply><motion>emotion label</motion>, strictly follow this output format 6. Keep replies concise [Emotion label system {5}"
+	[SerializeField]
+	private string m_SystemSetting = ""
 ;
 	/// <summary>
 	/// Model Name
 	/// </summary>
-	public string m_ModelName = "deepseek-chat";
+	public string m_ModelName = "deepseek-reasoner";
 	static string SessionId = ""; // Initial session ID
 
 
@@ -244,17 +245,17 @@ public class ChatDeepSeek : LLM
 
 		{
 			m_DataList.Insert(0, new SendData("system", string.Format(m_SystemSetting, m_Name, JsonMapper.ToJson(m_Characters), m_CurCharacter, JsonMapper.ToJson(m_SkillBook), JsonMapper.ToJson(m_SkillBookLearned), JsonMapper.ToJson(m_Motions), m_CurMotion)));
-			//上下文条数设�???
+			//上下文条数设�????
 			CheckHistory();
 		}
 
-		//提示词处�???
-		//string message = "当前回答的语言�???" + LanguageManager.LanguageManager.Instance.GetCurrentLanguage() +
-		//		" 接下来是我的提问�???" + _msg;
+		//提示词处�????
+		//string message = "当前回答的语言�????" + LanguageManager.LanguageManager.Instance.GetCurrentLanguage() +
+		//		" 接下来是我的提问�????" + _msg;
 		Debug.Log("Current language: " + LocalizationManager.CurrentLanguage);
 		string message = "当前回答的语言?" + LocalizationManager.CurrentLanguage +
 				" 接下来是我的提问?" + _msg;
-		//string message = " 接下来是我的提问�???" + _msg;
+		//string message = " 接下来是我的提问�????" + _msg;
 		//缓存发送的信息列表
 		m_DataList.Add(new SendData("user", message));
 		StartCoroutine(Request(_msg, _callback));
