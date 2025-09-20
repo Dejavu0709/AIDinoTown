@@ -221,8 +221,11 @@ public class CryptoPriceMonitor : MonoBehaviour
 
                             string sign = isUp ? "+" : "-";
                             double deltaAbs = price - prev;
-                            string msg = $"{prefix}{SymToPretty(sym)} {sign}{absChange:F2}% 现价 {price:F2} USDT (前价 {prev:F2}, 变动 {deltaAbs:F2})";
-                            alertEntries.Add(msg);
+                            // Colorize: green for up, red for down
+                            string color = isUp ? "#00C853" : "#D50000";
+                            string msgCore = $"{prefix}{SymToPretty(sym)} {sign}{absChange:F2}% 现价 {price:F2} USDT (前价 {prev:F2}, 变动 {deltaAbs:F2})";
+                            string colored = $"<color={color}>{msgCore}</color>";
+                            alertEntries.Add(colored);
                             Debug.Log("alertEntries: " + alertEntries.Count);
                         }
                     }
