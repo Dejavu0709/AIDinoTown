@@ -11,7 +11,7 @@ public class MainView : MonoBehaviour
 
     public GameObject NewsTipsPrefab;
     
-    private Vector3 _startPos = new Vector3(-253, 350, 0);
+    private Vector3 _startPos = new Vector3(-253, 300, 0);
     public Transform ToastCavas;
     void Start()
     {
