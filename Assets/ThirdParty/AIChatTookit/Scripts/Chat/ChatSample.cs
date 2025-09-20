@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using MEC;
 using RobotGame;
+using TMPro;
 public class ChatSample : MonoSingleton<ChatSample>
 {
     /// <summary>
@@ -21,7 +22,7 @@ public class ChatSample : MonoSingleton<ChatSample>
     /// <summary>
     /// ?????????
     /// </summary>
-    [SerializeField] public InputField m_InputWord;
+    [SerializeField] public  TMP_InputField m_InputWord;
     /// <summary>
     /// ????????
     /// </summary>
