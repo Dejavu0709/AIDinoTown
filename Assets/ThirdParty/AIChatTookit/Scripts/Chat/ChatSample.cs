@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using MEC;
 using RobotGame;
 using TMPro;
+using com.ootii.Messages;
 public class ChatSample : MonoSingleton<ChatSample>
 {
     /// <summary>
@@ -22,7 +23,8 @@ public class ChatSample : MonoSingleton<ChatSample>
     /// <summary>
     /// ?????????
     /// </summary>
-    [SerializeField] public  TMP_InputField m_InputWord;
+    [SerializeField] public InputField m_InputWord;
+    public static string CurMsgSended;
     /// <summary>
     /// ????????
     /// </summary>
@@ -87,6 +89,7 @@ public class ChatSample : MonoSingleton<ChatSample>
     public void SendData()
     {
         Debug.Log("SendData" + m_InputWord.text);
+        MessageDispatcher.SendMessage("SendChatResponseRequest");
         if (m_InputWord.text.Equals(""))
             return;
 
@@ -96,6 +99,8 @@ public class ChatSample : MonoSingleton<ChatSample>
             m_InputWord.text = "";
             return;
         }
+
+        CurMsgSended = m_InputWord.text;
 
 
         //??????????
@@ -161,14 +166,14 @@ public class ChatSample : MonoSingleton<ChatSample>
         //???????
         ChatHistory.Add(_response);
         PlayerSave.SaveChatHistory(ChatHistory);
+        
+        MessageDispatcher.SendMessageData("GetChatResponseSuccess", _response);
         //if (!m_IsVoiceMode || m_ChatSettings.m_TextToSpeech == null)
         {
             //??????????????????
             StartTypeWords(_response);
             return;
         }
-
-
         //m_ChatSettings.m_TextToSpeech.Speak(_response, PlayVoice);
     }
 
